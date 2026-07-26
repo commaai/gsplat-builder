@@ -2,7 +2,7 @@
 set -euo pipefail
 shopt -s nullglob
 
-VERSION=1.5.3+pt213cu130.nurec1
+VERSION=1.5.3+pt213cu130.3dgutrgb
 : "${MAX_JOBS:=4}"
 TORCH_CUDA_ARCH_LIST="8.6;8.9;12.0"
 
