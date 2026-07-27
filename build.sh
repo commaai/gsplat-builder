@@ -2,9 +2,9 @@
 set -euo pipefail
 shopt -s nullglob
 
-VERSION=1.5.3+pt213cu130.3dgutrgb
+VERSION=1.5.3+pt213cu130.3dgutrgb.1
 : "${MAX_JOBS:=4}"
-TORCH_CUDA_ARCH_LIST="8.6;8.9;12.0"
+: "${TORCH_CUDA_ARCH_LIST:=8.6;8.9;12.0}"
 
 rm -rf /tmp/gsplat /tmp/wheel /tmp/unpacked
 mkdir -p /tmp/gsplat /tmp/wheel /tmp/unpacked

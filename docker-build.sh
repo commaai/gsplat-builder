@@ -6,7 +6,7 @@ cd "$(dirname "$0")"
 : "${GSPLAT_COMMIT:?GSPLAT_COMMIT must be set}"
 
 if [ ! -d gsplat ]; then
-  git clone --filter=blob:none --no-checkout https://github.com/nerfstudio-project/gsplat.git gsplat
+  git clone --filter=blob:none --no-checkout https://github.com/commaai/gsplat.git gsplat
   git -C gsplat checkout --detach "${GSPLAT_COMMIT}"
 fi
 
@@ -30,6 +30,7 @@ docker run --rm \
   --user "$(id -u):$(id -g)" \
   -e HOME=/tmp \
   -e MAX_JOBS \
+  -e TORCH_CUDA_ARCH_LIST \
   -v "$(pwd)/gsplat:/input:ro" \
   -v "$(pwd):/output" \
   gsplat-builder
