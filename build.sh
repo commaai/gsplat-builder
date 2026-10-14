@@ -2,7 +2,7 @@
 set -euo pipefail
 shopt -s nullglob
 
-VERSION=1.5.3+pt213cu130.3dgutrgb.1
+VERSION=1.5.3+pt214cu130.3dgutrgb.1
 : "${MAX_JOBS:=4}"
 : "${TORCH_CUDA_ARCH_LIST:=8.6;8.9;12.0}"
 
@@ -13,8 +13,8 @@ cd /tmp/gsplat
 
 sed -i "s/__version__ = \"1.5.3\"/__version__ = \"${VERSION}\"/" gsplat/version.py
 grep -q "__version__ = \"${VERSION}\"" gsplat/version.py
-sed -i 's/"torch>=2.7"/"torch==2.13.0"/' setup.py
-grep -q '"torch==2.13.0"' setup.py
+sed -i 's/"torch>=2.7"/"torch==2.14.1"/' setup.py
+grep -q '"torch==2.14.1"' setup.py
 
 export MAX_JOBS TORCH_CUDA_ARCH_LIST
 export BUILD_EXPERIMENTAL=0 BUILD_3DGUT=1 NUM_CHANNELS=3
